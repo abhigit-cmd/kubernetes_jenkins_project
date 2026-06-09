@@ -1,11 +1,8 @@
-FROM centos:7
+FROM httpd:latest
 
-RUN yum install -y httpd
-
-COPY index.html /var/www/html/
-
-CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
+COPY index.html /usr/local/apache2/htdocs/
 
 EXPOSE 80
+
 
 
